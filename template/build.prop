@@ -1,7 +1,0 @@
-build.type=@BUILD_TYPE@
-build.date=@BUILD_DATE@
-build.list=@BUILD_LIST@
-build.abilist=@BUILD_ABILIST@
-version.name=@VERSION_NAME@
-version.code=@VERSION_CODE@
-install.script=@INSTALL_SCRIPT@
