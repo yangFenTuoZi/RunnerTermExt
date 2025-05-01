@@ -1,6 +1,7 @@
 #!/system/bin/sh
-export PREFIX=/data/local/tmp/runner/usr
-export HOME=$PREFIX/home
+export RUNNER_DATA=/data/local/tmp/runner
+export PREFIX=$RUNNER_DATA/usr
+export HOME=$RUNNER_DATA/home
 export TMPDIR=$PREFIX/tmp
 export PATH=$PATH:$PREFIX/bin:$PREFIX/bin/applets
 if [ ! -z $LD_LIBRARY_PATH ]; then
@@ -11,8 +12,8 @@ fi
 chmod 777 -R $PREFIX
 
 # 添加App内设置的环境
-if [ -r $PREFIX/etc/app_env.list ]; then
-  for i in $(cat $PREFIX/etc/app_env.list); do
+if [ -r $HOME/.local/share/runner/env ]; then
+  for i in $(cat $HOME/.local/share/runner/env); do
     export $i
   done
 fi
