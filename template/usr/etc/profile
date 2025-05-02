@@ -11,14 +11,6 @@ else
 fi
 chmod 777 -R $PREFIX
 
-# 添加App内设置的环境
-if [ -r $HOME/.local/share/runner/env ]; then
-  for i in $(cat $HOME/.local/share/runner/env); do
-    export $i
-  done
-fi
-unset i
-
 # 加载profile.d下的所有sh配置
 for i in $PREFIX/etc/profile.d/*.sh; do
   if [ -r $i ]; then
